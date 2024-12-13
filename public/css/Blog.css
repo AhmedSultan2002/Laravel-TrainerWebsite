@@ -1,0 +1,110 @@
+/* new blog css with elements similar to About and General for the blogs and comments */
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 40px;
+}
+
+.articles-box {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 8px;
+    color: #25232B;
+    background-color: #bfe2f8;
+    min-height: 200px;
+    max-height: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.articles-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    color: white
+}
+
+.articles-box a {
+    color: inherit
+}
+
+.articles-box h3 {
+    font-size: 1.5em;
+}
+
+.articles-box .meta {
+    font-size: 1.0em;
+    margin-bottom: 10px;
+}
+
+.comments-section {
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /*make the value LARGER*/
+}
+
+.comments-section h3 {
+    font-size: 1.4em;
+    margin-bottom: 20px;
+}
+
+.comments-section label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.comments-section input, .comments-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.comments-section button {
+    padding: 10px 20px;
+    background-color: rgba(60, 175, 172, 0.8);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.comments-section button:hover {
+    background-color: rgba(60, 175, 172, 1);
+}
+/* chnge it after running in phone if issue CHECK*/
+
+@media (max-width: 1155px)
+{
+    .articles-grid{
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 768px) {
+    .articles-grid {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .articles-box h3 {
+        font-size: 1.2em;
+    }
+    .articles-box .meta {
+        font-size: 0.8em;
+    }
+
+@media (max-width: 480px) {
+        .articles-box h3 {
+            font-size: 1.0em;
+        }
+        .articles-box .meta {
+            font-size: 0.7em;
+        }
+    }
+}

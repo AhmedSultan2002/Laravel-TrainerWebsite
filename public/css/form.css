@@ -1,0 +1,158 @@
+.MainContact{
+    flex: 1;
+    background-color: hsla(202, 73%, 91%, 0.745);
+    height: 100vh;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    padding: 20px;
+}
+
+.contact p {
+    margin-bottom: -5px; 
+    font-size:xx-large;
+    font-weight: 700;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 700px; /* Wider form */
+    background-color: #396079;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Row styling for grouping fields */
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px; /* Space between columns */
+    width: 100%;
+    margin-bottom: 15px; /* Default gap between rows */
+}
+
+.form-row:last-child {
+    margin-bottom: 25px; /* Extra gap for last row */
+}
+
+.form_part {
+    flex: 1; /* Equal width for fields in the same row */
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Space between label and input */
+}
+
+/* Full-width rows for Services and Message */
+.full-width-row {
+    width: 100%; /* Ensure full width */
+    margin-bottom: 25px; /* Add sufficient gap */
+}
+
+/* Input, select, and textarea styling */
+form input, form select, form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%; /* Ensure inputs and textareas span the entire width */
+    box-sizing: border-box; /* Ensure consistent sizing */
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus, form select:focus, form textarea:focus {
+    border-color: #77aadd;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(119, 170, 221, 0.5);
+}
+
+/* Wider message input box */
+form textarea {
+    width: 100%; /* Make textarea span the full width */
+    min-height: 120px; /* Adjust height for better usability */
+    resize: vertical; /* Allow users to resize vertically */
+}
+
+/* Labels */
+form label {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Button styling */
+form button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #243850;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #1e2f43;
+    transform: scale(1.05);
+}
+
+/* Error messages */
+span.error {
+    color: #d9534f; /* Bootstrap danger red */
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Success message */
+#successMessage {
+    display: none;
+    color: lightgreen;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+    background-color:#396079;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    form {
+        padding: 15px;
+    }
+
+    .form-row {
+        flex-direction: column; /* Stack fields vertically on smaller screens */
+        gap: 15px;
+    }
+
+    form button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        padding: 10px;
+    }
+
+    form button {
+        padding: 8px;
+    }
+
+    form label, form input, form textarea {
+        font-size: 14px;
+    }
+}

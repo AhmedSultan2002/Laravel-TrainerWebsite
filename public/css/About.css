@@ -1,0 +1,117 @@
+/* Main About section */
+.MainAbout {
+    flex: 1;
+    background-color: hsla(202, 73%, 91%, 0.745);
+    height: 100vh;
+}
+
+/* Articles grid layout */
+/* Updated Articles grid layout */
+.articles {
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack the cards vertically */
+    padding: 20px;
+    gap: 20px; /* Space between the cards */
+}
+
+/* Updated Individual article box styling */
+.articles-box {
+    width: 100%; /* Full width */
+    margin: 0 auto;
+    /* margin-top: -7px; */
+    padding: 40px; /* Adjust padding for aesthetics */
+    background-color: #bfe2f8;
+    color: rgba(37, 35, 43, 255);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px -4px 6px rgba(0, 0, 0, 0.1); /* Add top and bottom shadows */
+    display: flex;
+    border-radius: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease-in-out, background-color 0.4s ease-in-out, color 0.4s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Hover effects for article boxes */
+.articles-box:hover {
+    transform: scale(1.01); /* Slightly enlarge on hover */
+    background-color: #396079;
+    color: white;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2), 0px -6px 8px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Link styling within articles */
+.articles-box a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+
+.articles-box a:hover {
+    text-decoration: underline;
+}
+
+.articles-box h2,h3{
+    margin-top: -15px;
+}
+.articles-box p {
+    align-self: flex-start;
+    margin: 5px;
+    margin-top: 20px;
+}
+
+.Js_button {
+    background-color: #bfe2f8;
+    border-width: 0px;
+}
+
+/* trainer pics */
+.trainer img {
+    width: 200px; /* Adjust size as necessary */
+    height: auto;
+    transition: opacity 1s ease; /* Smooth transition over 1 second */
+    opacity: 1;
+    margin-top: 30px;
+}
+
+
+.trainer img.fade {
+    opacity: 0; /* Fade out for a transition effect */
+}
+
+
+
+/* Fade animation */
+@keyframes Fade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .articles {
+        grid-template-columns: 1fr;
+    }
+
+    .articles-box {
+        padding: 30px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .articles {
+        padding: 10px; 
+    }
+
+    .articles-box {
+        padding: 20px; 
+    }
+
+    .articles-box h3,
+    .articles-box p {
+        font-size: 14px; 
+    }
+
+    .articles-box a {
+        font-size: 14px; 
+    }
+}

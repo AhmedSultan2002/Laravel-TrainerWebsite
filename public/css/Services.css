@@ -1,0 +1,302 @@
+/* Main Services section */
+.MainServices {
+    flex: 1;
+    background-color: hsla(202, 73%, 91%, 0.745);
+}
+
+/* Container for service content */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+}
+
+.container h2 {
+    padding: 20px;
+    font-size: 200%;
+    color:#152A38;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    animation: slide 3s ease 0.2s infinite;
+}
+
+/* Services grid layout */
+.services {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* Individual service box styling */
+.services-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #bfe2f8;
+    border-radius: 10px;
+    color: rgba(37,35,43,255);
+    padding: 20px;
+    margin: 5px;
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out, transform 0.4s ease-in-out;
+    overflow: hidden; /* Hide image initially */
+    position: relative;
+    height: auto;
+    transform-origin: center;
+}
+
+.Js_button {
+    background-color: #bfe2f8;
+    border-width: 0px;
+}
+
+.custom {
+    color:goldenrod !important;
+    font-weight: bold !important;
+    font-family: sans-serif !important;
+}
+.custom:hover {
+    color: silver !important;
+}
+
+.services-box .text-container {
+    z-index: 1;
+    text-align: center;
+}
+
+.services-box .img-container {
+    display: flex;
+    position: relative;
+    top: 0;
+    right: -200%; 
+    transition: right 0.5s ease-in-out;
+    z-index: 1; 
+    margin-top: 10px;
+    max-width: 100%;
+}
+
+.services-box:hover .img-container {
+    right: 0; /* Slide in the image when the box is hovered */
+}
+
+.services-box p, .services-box li{
+    font-size: 18px;
+}
+.services-box h3{
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.services-box ul{
+    text-align: left;
+    align-self: flex-start;
+}
+
+.services-box div{
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: inherit;
+}
+
+.services-box:hover {
+    background-color: #396079;
+    color: white;
+    transform: scale(1.02);
+}
+
+.services-box .img-container img {
+    height: 0;
+    width: 100%; /* Make the image take up full width */
+    max-height: 350px; /* Ensure images are not too large vertically */
+    object-fit: cover; /* Make sure image covers the area properly */
+    border-radius: 10px;
+    margin: 5px; /* Remove extra margin */
+    transition: height 0.5s ease-in-out;
+}
+
+.services-box:hover img{
+    height: 350px;
+}
+
+/* Table styling */
+.tables {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    width: 100%;
+}
+
+.tables table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.tables thead {
+    background-color: #152A38;
+    color: white;
+}
+
+.tables tbody {
+    color: rgba(37,35,43,255);
+    background-color: #bfe2f8;
+    text-align: center;
+}
+
+
+.tables h3 {
+    padding: 10px;
+    background-color: #152A38;
+    color: white;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+/* Styling for the additional services table */
+#additional-services-table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+#additional-services-table thead {
+    background-color: #152A38;
+    color: white;
+}
+
+#additional-services-table tbody {
+    color: rgba(37,35,43,255);
+    background-color: #bfe2f8;
+    text-align: left;
+}
+
+/* Button styling */
+.tables button {
+    padding: 10px 15px;
+    margin: 10px;
+    background-color: #152A38;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tables button:hover {
+    background-color: rgba(60,175,172,255);
+}
+/* Slide animation */
+@keyframes slide {
+    0% {
+        transform: translateX(0); 
+    }
+    25% {
+        transform: translateX(20px); 
+    }
+    50% {
+        transform: translateX(-20px); 
+    }
+    75% {
+        transform: translateX(10px); 
+    }
+    100% {
+        transform: translateX(0); 
+    }
+}
+
+/* Media Queries for responsiveness */
+/* Large Mobile Screens and smaller tablets (max-width: 992px) */
+@media (max-width: 992px) {
+    .services {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .services-box img {
+        height: 250px;
+        width: 250px;
+    }
+
+    .container h2 {
+        font-size: 170%;
+    }
+}
+
+/* Tablet Screens (max-width: 768px) */
+@media (max-width: 768px) {
+    .services {
+        grid-template-columns: 1fr;
+    }
+
+    .services-box img {
+        height: 250px;
+        width: 250px;
+    }
+
+    .container h2 {
+        font-size: 150%;
+    }
+}
+
+/* Adjustments for small screens */
+@media (max-width: 576px) {
+    .services-box {
+        padding: 10px; /* More compact padding */
+        margin: 5px 0; /* Smaller margin for better layout */
+    }
+
+    .services-box .img-container img {
+        height: auto;
+        max-width: 100%;
+        max-height: 180px; /* Smaller max-height on small screens */
+        object-fit: contain; /* Ensure image is contained properly without stretching */
+    }
+
+    .container h2 {
+        font-size: 130%;
+    }
+}
+
+/* For very small mobile screens */
+@media (max-width: 480px) {
+    .services-box {
+        padding: 10px; /* Even more compact padding */
+        margin: 5px 0; /* Reduced margin to allow more content space */
+    }
+
+    .services-box .img-container img {
+        height: auto;
+        width: 100%;
+        max-height: 150px; /* Further reduced height */
+    }
+
+    table {
+        font-size: 80%;
+    }
+
+    .container h2 {
+        font-size: 120%;
+    }
+}
+
+/* Small Mobile Screens (max-width: 320px) */
+@media (max-width: 320px) {
+    .services-box .img-container img {
+        height: auto;
+        max-width: 110px;
+        min-width: 80px;
+    }
+
+    table {
+        font-size: 65%;
+    }
+    .services-box p {
+        text-align: left;
+    }
+
+    .container h2 {
+        font-size: 110%;
+    }
+}
